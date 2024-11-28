@@ -1,0 +1,91 @@
+.container-messenger {
+  padding: 35px 50px;
+  background: linear-gradient(
+    43deg,
+    rgba(50, 23, 77) 0%,
+    rgba(26, 36, 33, 0.8) 46%,
+    rgba(50, 23, 77, 0.7) 100%
+  );
+}
+.left-mess,
+.siderbar-right-mess,
+.chat-main {
+  background: linear-gradient(#181623, #18181d, #111);
+}
+.container-mess {
+  font-size: 16px;
+}
+.input-mess,
+.input-search {
+  background-color: #26272c;
+}
+.chat-main .content-mess {
+  font-size: 16.3px;
+}
+.header-main-mess h2 {
+  font-size: 1rem;
+}
+.header-main-mess p {
+  font-size: 0.85rem;
+}
+.left-mess .content-left {
+  font-size: 16.3px;
+}
+.header-main-mess {
+  border-bottom: 1px solid #262626;
+}
+.border-mess-left {
+  border-right: 1px solid #262626;
+}
+
+.border-bottom-manchat {
+  border-bottom: 1px solid #262626;
+}
+
+.status-indicator {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+}
+
+.status-online {
+  background-color: #22c55e;
+  border: 2px solid #1f2937;
+}
+
+// .status-offline {
+//   background: linear-gradient(#536878, #536878, #536878);
+// }
+
+.color-svg-bottom,
+.color-svg-bottom-right,
+.color-svg-top {
+  background-color: transparent;
+  svg {
+    color: #fff;
+  }
+}
+.color-svg-right {
+  button > div {
+    background-color: #303030;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #404040;
+    }
+  }
+  svg {
+    color: #fff;
+  }
+}
+.bottom-send {
+  .send-mess {
+    svg {
+      font-size: 22px;
+      color: #0084ff;
+    }
+  }
+}

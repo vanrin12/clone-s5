@@ -1,0 +1,371 @@
+.profile {
+  color: #fff;
+  min-height: 100vh;
+  padding: 60px 20px;
+  max-width: 935px;
+  margin: 0 auto;
+  position: relative;
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 44px;
+  }
+
+  &__pictureUser {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    flex-shrink: 0;
+    margin: 0 40px;
+    box-shadow: 0 0 10px 10pxpx rgba(0, 0, 0, 1);
+    padding: 5px;
+  }
+
+  &__uploadImageUser {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+  }
+
+  &__info {
+    flex: 1;
+  }
+
+  &__infoTop {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__idUser {
+    font-size: 28px;
+    font-weight: 300;
+    margin-right: 20px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 8px;
+
+    button {
+      background-color: #2a2a2a;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+
+  &__setting {
+    cursor: pointer;
+    margin-left: 10px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  &__fullname {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  &__tabs {
+    border-top: 1px solid #262626;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+
+    button {
+      background: none;
+      border: none;
+      color: #8e8e8e;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      letter-spacing: 1px;
+      position: relative;
+      padding-top: 15px;
+      transition: color 0.3s ease;
+
+      svg {
+        margin-right: 6px;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover {
+        color: #fff;
+
+        & ~ .indicator {
+          opacity: 0.4;
+        }
+      }
+
+      &:focus {
+        color: #fff;
+      }
+
+      &.active {
+        color: #fff;
+      }
+
+      i {
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  &__sharePhoto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    text-align: center;
+
+    svg {
+      width: 62px;
+      height: 62px;
+    }
+
+    h2 {
+      font-size: 32px;
+      font-weight: 300;
+      margin-top: 24px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #a8a8a8;
+      margin-top: 16px;
+      max-width: 350px;
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: #0095f6;
+      font-weight: 600;
+      font-size: 14px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  }
+
+  &__new {
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 200px;
+    max-height: 200px;
+    margin-bottom: 50px;
+  }
+
+  &__upload-new {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__content {
+    margin-top: 20px;
+    text-align: center;
+    color: #8e8e8e;
+  }
+
+  &__noPosts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 300px;
+    gap: 10px;
+
+    i {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 20px;
+      svg {
+        font-size: 40px;
+      }
+    }
+    h2 {
+      margin-bottom: 10px;
+      font-size: 30px;
+    }
+  }
+
+  &__bio {
+    padding: 20px 0;
+    width: 300px;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    box-sizing: border-box;
+  }
+}
+.profile__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 0.2s ease-in-out forwards;
+  z-index: 99;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  &-content {
+    background-color: #242424;
+    padding: 16px;
+    border-radius: 15px;
+    width: 400px;
+    animation: scaleIn 0.2s ease-out forwards;
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0.95);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    h2 {
+      color: #fff;
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 16px;
+      padding: 10px 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px 0;
+      margin: 4px 0;
+      border: none;
+      border-radius: 4px;
+      background: none;
+      cursor: pointer;
+      font-size: 17px;
+
+      &:first-of-type {
+        color: #0095f6;
+      }
+
+      &:nth-of-type(2) {
+        color: #ed4956;
+      }
+
+      &:last-of-type {
+        color: #a8a8a8;
+      }
+
+      &:hover {
+        background-color: #363636;
+      }
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+}
+
+.profile__bottom {
+  span.clickable {
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.indicator {
+  position: absolute;
+  top: 0;
+  height: 1px;
+  background-color: #fff;
+  transition: left 0.3s ease, width 0.3s ease;
+  opacity: 1;
+
+  &:not([style]) {
+    left: 0;
+    width: 61px; // Điều chỉnh độ rộng phù hợp với button đầu tiên
+  }
+}
+
+.profile__pictureUser {
+  .profile__fullnameResponsive {
+    margin-top: 20px;
+    font-size: 17px;
+    font-weight: 400;
+    text-align: center;
+    display: none;
+  }
+}
+@media (max-width: 775px) {
+  .profile {
+    .profile__pictureUser {
+      margin: 0;
+    }
+  }
+  .profile__pictureUser {
+    .profile__fullnameResponsive {
+      display: block;
+    }
+  }
+  .profile__nameUser {
+    display: none;
+  }
+  .profile__bio {
+    margin: 0;
+    padding: 0;
+  }
+}

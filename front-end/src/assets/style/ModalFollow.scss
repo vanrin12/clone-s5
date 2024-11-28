@@ -1,0 +1,244 @@
+.follow-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  &__content {
+    background-color: #262626;
+    border-radius: 12px;
+    min-width: 400px;
+    max-width: 400px;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+  &__header {
+    padding: 10px;
+    border-bottom: 1px solid #363636;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      color: #fff;
+      font-size: 17px;
+      font-weight: 600;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      text-transform: capitalize;
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 24px;
+      padding: 4px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__search {
+    padding: 8px 16px;
+    position: relative;
+    border-bottom: 1px solid #363636;
+
+    .search-icon {
+      position: absolute;
+      left: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #8e8e8e;
+      font-size: 16px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px 8px 8px 40px;
+      background-color: #363636;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 14px;
+
+      &::placeholder {
+        color: #8e8e8e;
+      }
+
+      &:focus {
+        outline: none;
+        background-color: #404040;
+      }
+    }
+  }
+
+  &__list {
+    padding: 8px 0;
+  }
+
+  &__user {
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.2s;
+    margin: 0 10px;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: #363636;
+    }
+
+    &:hover button {
+      background-color: #212121 !important;
+    }
+
+    &-info {
+      display: flex;
+      align-items: center;
+      // gap: 12px;
+
+      img {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 12px;
+      }
+    }
+
+    &-details {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+
+      .username-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .username {
+          color: #fff;
+          font-weight: 600;
+          font-size: 14px;
+        }
+
+        .checkButton {
+          color: #0095f6;
+          font-size: 12px;
+          font-weight: 400;
+          position: relative;
+          // padding-left: 4px;
+
+          &::before {
+            content: "•";
+            position: relative;
+            margin-right: 4px;
+            color: #a8a8a8;
+          }
+        }
+      }
+
+      .fullname {
+        color: #8e8e8e;
+        font-size: 14px;
+      }
+    }
+
+    // Button Styles
+    button {
+      padding: 7px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      min-width: 100px;
+      background-color: #363636;
+      color: #fff;
+      border: 1px solid #363636;
+
+      &:hover {
+        background-color: #222;
+        border-color: #222;
+      }
+      // Follow button
+      &.follow {
+        background-color: #0095f6;
+        color: #fff;
+
+        &:active {
+          transform: scale(0.98);
+        }
+      }
+
+      // Following button
+      &.following {
+        background-color: #363636;
+        color: #fff;
+        border: 1px solid #363636;
+
+        &:hover {
+          background-color: #000;
+          border-color: #000;
+        }
+
+        &:active {
+          transform: scale(0.98);
+        }
+      }
+
+      // Friend button
+      &.friend {
+        background-color: #262626;
+        color: #0095f6;
+        border: 1px solid #0095f6;
+
+        &:hover {
+          background-color: rgba(0, 149, 246, 0.1);
+        }
+
+        &:active {
+          transform: scale(0.98);
+        }
+      }
+    }
+  }
+
+  // Scrollbar styling
+  &__content {
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #262626;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #404040;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #4a4a4a;
+    }
+  }
+  .checkButton {
+    font-size: 10px;
+    // margin-bottom: 20px;
+  }
+}

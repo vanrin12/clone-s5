@@ -1,0 +1,29 @@
+// Unfollow.scss
+.ant-modal-content {
+  .ant-modal-close {
+    color: #fff;
+
+    &:hover {
+      color: #ccc;
+    }
+  }
+
+  .ant-modal-header .ant-modal-title {
+    color: #fff;
+  }
+
+  .ant-btn {
+    background-color: #1890ff !important;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+
+    &:hover {
+      color: #fff !important;
+    }
+    color: #fff;
+    &.ant-btn-primary {
+      background-color: #b31b1b;
+    }
+  }
+}

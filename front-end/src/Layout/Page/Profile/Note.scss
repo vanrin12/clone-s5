@@ -1,0 +1,87 @@
+.profile {
+  &__noteZ {
+    position: absolute;
+    width: 65px;
+    min-width: 65px !important;
+    max-width: 100px;
+    height: 40px;
+    min-height: 40px;
+    max-height: 60px;
+    top: -25px;
+    left: 0;
+    right: 0;
+    padding: 5px 7px;
+    background-color: #333;
+    border: 1px solid #333;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-family: "Roboto", serif;
+    color: #c0c0c0;
+    transition: width 0.3s ease, height 0.3s ease;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 10px;
+      height: 10px;
+      background-color: #333;
+      bottom: -6px;
+      left: 20%;
+      // transform: translateX(-100%);
+      z-index: 1;
+      border-radius: 50%;
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &:hover {
+      background-color: #333;
+    }
+
+    span {
+      color: #fff;
+      font-size: 13px;
+      line-height: 18px;
+      word-wrap: break-word;
+      text-align: center;
+      width: 100%;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      flex: 1;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+  }
+}
+
+.note-placeholder {
+  width: 80px;
+  font-size: 12px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// .circle {
+//   &__one {
+//     position: absolute;
+//     content: "";
+//     width: 10px;
+//     height: 10px;
+//     background-color: red;
+//     top: 6px;
+//     right: 50%;
+//     transform: translateX(-70%);
+//     z-index: 99;
+//     border-radius: 50%;
+//   }
+// }

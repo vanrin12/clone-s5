@@ -1,0 +1,152 @@
+:root {
+  --clr: #181623;
+}
+
+.navigation {
+  // background: linear-gradient(#000, #000, #000);
+  background: linear-gradient(
+    163deg,
+    rgba(65, 88, 208, 0.9) 0%,
+    rgba(200, 80, 192, 0.9) 46%,
+    rgba(255, 204, 112, 0.9) 100%
+  );
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Căn giữa toàn bộ thanh điều hướng */
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  z-index: 999;
+  overflow: hidden;
+
+  img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: 0.5s ease;
+  }
+}
+
+.navigation ul {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly; /* Phân bổ đều các mục */
+  width: 100%;
+}
+
+.navigation ul li {
+  position: relative;
+  list-style: none;
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8em;
+  color: #fff;
+  line-height: normal;
+  opacity: 0.75;
+  transition: 0.5s;
+}
+
+.navigation ul li.active a .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  color: #fff;
+  transform: translateY(-8px);
+  font-size: 1.8em;
+}
+.navigation ul li.active a img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  color: #fff;
+  transform: translateY(-8px);
+  // font-size: 1.8em;
+  border-color: #fff;
+  padding: 2px;
+}
+
+.indicators {
+  position: absolute;
+  top: -10px;
+  width: 60px;
+  height: 60px;
+  background: var(--clr);
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  border: 6px solid var(--clr);
+  transition: left 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+  // opacity: 0.9;
+}
+
+.indicators::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: -25.75px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-right-radius: 20px;
+  box-shadow: 4px -6px 0 2px var(--clr);
+  z-index: 0;
+}
+
+.indicators::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: -25.75px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-left-radius: 20px;
+  box-shadow: -4px -6px 0 2px var(--clr);
+  z-index: 0;
+}
+
+.indicators span {
+  position: absolute;
+  left: 2px;
+  top: 4px;
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(
+    163deg,
+    rgba(65, 88, 208, 0.9) 0%,
+    rgba(200, 80, 192, 0.9) 46%,
+    rgba(255, 204, 112, 0.9) 100%
+  );
+  // border: 3px solid #7b68ee;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
+  transform: scale(0.86);
+  z-index: 0;
+}

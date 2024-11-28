@@ -1,0 +1,218 @@
+.note-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  font-family: Arial, Helvetica, sans-serif;
+
+  &__backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+
+  &__container {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    min-height: 240px;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 768px) {
+      margin: 0;
+      height: 100%;
+      max-width: none;
+      border-radius: 0;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 12px;
+    flex-shrink: 0;
+
+    h2 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    button {
+      background: none;
+      border: none;
+      padding: 6px;
+      cursor: pointer;
+      color: #fff;
+      font-size: 13px;
+      z-index: 1;
+
+      &.disabled {
+        opacity: 0.3;
+        cursor: default;
+      }
+    }
+  }
+
+  &__close {
+    svg {
+      width: 25px;
+      height: 25px;
+      color: #fff;
+    }
+  }
+
+  &__done {
+    font-weight: 500;
+    color: #0095f6 !important;
+    // font-size: 17px;
+
+    &.disabled {
+      color: rgba(0, 149, 246, 0.3) !important;
+    }
+  }
+  &__char-count {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  &__content {
+    padding: 12px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__user-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-shrink: 0;
+    flex-direction: column;
+    margin: 50px 0 100px 0;
+  }
+
+  &__profile-pic {
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    flex: 1;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    img {
+      border-radius: 50%;
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+    }
+  }
+
+  textarea {
+    flex: 1;
+    background: #333;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 10px 15px;
+    resize: none;
+    min-height: 50px;
+    height: 65px;
+    max-height: 80px;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    border-radius: 16px;
+    transform: translateX(-50%);
+    // overflow-y: auto;
+    width: 35%; /* Thêm width cố định */
+    // text-align: center; /* Căn giữa text */
+    font-family: Arial, Helvetica, sans-serif;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      top: 0;
+      left: 0;
+      // transform: translateX(-100%);
+      z-index: 99;
+      border-radius: 50%;
+    }
+    /* Căn giữa placeholder */
+    &::placeholder {
+      text-align: left;
+      position: static; /* Bỏ position absolute */
+      transform: none; /* Bỏ transform */
+      width: 100%;
+      line-height: 45px; /* Căn giữa theo chiều dọc */
+      font-size: 15px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-scrollbar {
+      width: 25px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 4px;
+    }
+
+    /* Tùy chỉnh thanh cuộn cho Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  }
+  &__visibility {
+    padding: 12px;
+    background-color: #000;
+    border-radius: 8px;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+    }
+
+    p {
+      margin: 0;
+      color: #737373;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
