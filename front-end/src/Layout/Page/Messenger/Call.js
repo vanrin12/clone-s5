@@ -3,7 +3,7 @@ import { io } from 'socket.io-client';
 import Peer from 'peerjs';
 import { Phone, Video, Mic, MicOff, Video as VideoIcon, VideoOff } from 'lucide-react';
 import config from './../../../config';
-import { IncomingCallAlert } from './IncomingCallAlert';
+// import { IncomingCallAlert } from './IncomingCallAlert';
 
 export function Call({ selectedChat }) {
   const [callStatus, setCallStatus] = useState('idle');
@@ -254,13 +254,7 @@ export function Call({ selectedChat }) {
 
   return (
     <div className="relative">
-      {incomingCall && (
-        <IncomingCallAlert
-          call={incomingCall}
-          onAccept={acceptCall}
-          onReject={rejectCall}
-        />
-      )}
+   
 
       {selectedChat && receiverId && (
         <div className="flex space-x-2">
