@@ -6,12 +6,12 @@ import connectDB from "./utils/db.js";
 import indexRouter from "./routes/index.route.js";
 import { app, server } from "./socket/socket.js";
 import { ExpressPeerServer } from "peer"; // Import PeerServer
-
+const cors = require('cors');
 // Cấu hình dotenv để sử dụng biến môi trường
 dotenv.config();
 
 const PORT = process.env.PORT || 5000;
-
+app.use(cors());
 // Endpoint kiểm tra kết nối server
 app.get("/", (req, res) => {
     return res.status(200).json({
